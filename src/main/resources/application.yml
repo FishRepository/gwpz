@@ -43,5 +43,5 @@ manager:
   username: admin
   passwd: admin
   
-auto_import:  _
-auto_include: /layout/pageShow.html
+auto_import:  "/component/global.ftl as global"
+auto_include: _

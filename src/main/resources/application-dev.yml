@@ -1,9 +1,6 @@
 server:
   port: 8100
 
-spring:
-
-
 druid:
     type: com.alibaba.druid.pool.DruidDataSource
     master:

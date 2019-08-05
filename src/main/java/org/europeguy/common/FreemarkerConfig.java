@@ -1,7 +1,6 @@
 package org.europeguy.common;
 
 import freemarker.template.Configuration;
-import freemarker.template.TemplateException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.boot.autoconfigure.freemarker.FreeMarkerProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
-import java.io.IOException;
 import java.util.*;
 
 /**
@@ -27,9 +25,7 @@ public class FreemarkerConfig {
         Configuration configuration = null;
         try {
             configuration = config.createConfiguration();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (TemplateException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         setAutoImport(autoImport,configuration);
@@ -54,7 +50,7 @@ public class FreemarkerConfig {
             return;
         }
         String[] imports = autoImport.split(";");
-        Map<String,String> importMap = new HashMap<String,String>(imports.length);
+        Map<String,String> importMap = new HashMap<>(imports.length);
         for (String s : imports) {
             String[] keyValue = s.split("as");
             if (keyValue.length != 2) {
@@ -73,7 +69,7 @@ public class FreemarkerConfig {
         for (String s : includes) {
             System.out.println(s);
         }
-        List list = new ArrayList<String>(Arrays.asList(includes));
+        List list = new ArrayList<>(Arrays.asList(includes));
         configuration.setAutoIncludes(list);
     }
 }
