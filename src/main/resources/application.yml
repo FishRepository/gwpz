@@ -10,7 +10,17 @@ spring:
   aop:
     auto: true
     proxy-target-class: true
-    
+  freemarker:
+    request-context-attribute: request
+    suffix: '.ftl'
+    content-type: text/html
+    enabled: true
+    cache: false
+    template-loader-path: classpath:/pages/
+    charset: UTF-8
+    settings:
+      number_format: '0.##'   #数字格式化，无小数点
+
 mybatis:
     type-aliases-package: org.europeguy.entity
     mapper-locations: org.europeguy.mapper/*.xml
@@ -33,4 +43,5 @@ manager:
   username: admin
   passwd: admin
   
-matcherPath: /jquery.js,/index.html,/fireController/isFire,/fireController/isFault,/fireController/isMonitor,/fireController/stopMonitor,/taskController/getTaskAll
+auto_import:  _
+auto_include: /layout/pageShow.html
