@@ -1,0 +1,36 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8 
+
+spring:
+  profiles:
+    active: ${config.profile:dev}
+  application:
+    name: gwpz
+  aop:
+    auto: true
+    proxy-target-class: true
+    
+mybatis:
+    type-aliases-package: org.europeguy.entity
+    mapper-locations: org.europeguy.mapper/*.xml
+    
+mapper:
+    not-empty: false
+    identity: MYSQL
+
+pagehelper:
+    offsetAsPageNum: true
+    rowBoundsWithCount: true
+    reasonable: true
+    supportMethodsArguments: true
+    closeConn: false
+      
+logging:
+  config: classpath:logback-spring.xml
+  
+manager:
+  username: admin
+  passwd: admin
+  
+matcherPath: /jquery.js,/index.html,/fireController/isFire,/fireController/isFault,/fireController/isMonitor,/fireController/stopMonitor,/taskController/getTaskAll

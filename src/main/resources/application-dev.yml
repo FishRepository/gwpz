@@ -1,0 +1,54 @@
+server:
+  port: 8100
+
+spring:
+
+
+druid:
+    type: com.alibaba.druid.pool.DruidDataSource
+    master:
+        url: jdbc:mysql://127.0.0.1:3306/db_gwol?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true&useSSL=false
+        driver-class-name: com.mysql.jdbc.Driver
+        username: root
+        password: 1234
+        defaultAutoCommit: false
+        minIdle: 1  
+        maxActive: 20  
+        initialSize: 2 
+        maxWait: 60000  
+        timeBetweenEvictionRunsMillis: 60000  
+        minEvictableIdleTimeMillis: 25200000
+        removeAbandonedTimeout: 1800  
+        validationQuery: select 'x'  
+        testOnBorrow: true  
+        testOnReturn: false  
+        testWhileIdle: true  
+        poolPreparedStatements: true  
+        maxPoolPreparedStatementPerConnectionSize: 50  
+        removeAbandoned: true  
+        filters: stat  
+    slave:
+        url: jdbc:mysql://192.168.1.10:3306/db_gwol?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8&useSSL=false
+        driver-class-name: com.mysql.jdbc.Driver
+        username: root
+        password: 1234
+        defaultAutoCommit: false
+        minIdle: 1  
+        maxActive: 20  
+        initialSize: 2 
+        maxWait: 60000  
+        timeBetweenEvictionRunsMillis: 60000  
+        minEvictableIdleTimeMillis: 25200000
+        removeAbandonedTimeout: 1800  
+        validationQuery: select 'x'  
+        testOnBorrow: true  
+        testOnReturn: false  
+        testWhileIdle: true  
+        poolPreparedStatements: true  
+        maxPoolPreparedStatementPerConnectionSize: 50  
+        removeAbandoned: true  
+        filters: stat  
+
+
+  
+  
