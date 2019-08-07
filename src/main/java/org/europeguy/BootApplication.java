@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @EnableAutoConfiguration
 @MapperScan("org.europeguy.mapper")
-@ComponentScan(basePackages = {"com.europeguy"})
+@ComponentScan(basePackages = {"org.europeguy"})
 public class BootApplication {
     public static void main(String[] args) {
         SpringApplication.run(BootApplication.class, args);

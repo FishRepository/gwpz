@@ -1,10 +1,17 @@
 server:
   tomcat:
-    uri-encoding: UTF-8 
+    uri-encoding: UTF-8
+  port: 8100
 
 spring:
-  profiles:
-    active: ${config.profile:dev}
+  datasource:
+    name: datasource
+    url: jdbc:mysql://127.0.0.1:3306/db_gwol?characterEncoding=UTF-8
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.jdbc.Driver
+#  profiles:
+#    active: ${config.profile:dev}
   application:
     name: gwpz
   aop:
@@ -20,6 +27,8 @@ spring:
     charset: UTF-8
     settings:
       number_format: '0.##'   #数字格式化，无小数点
+  resources:
+    static-locations: classpath:/**
 
 mybatis:
     type-aliases-package: org.europeguy.entity
@@ -29,19 +38,8 @@ mapper:
     not-empty: false
     identity: MYSQL
 
-pagehelper:
-    offsetAsPageNum: true
-    rowBoundsWithCount: true
-    reasonable: true
-    supportMethodsArguments: true
-    closeConn: false
-      
 logging:
   config: classpath:logback-spring.xml
-  
-manager:
-  username: admin
-  passwd: admin
-  
+
 auto_import:  "/component/global.ftl as global"
 auto_include: _

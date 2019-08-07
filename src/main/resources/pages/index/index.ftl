@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<#assign ctx=request.getContextPath()/>
 <html lang="zh-cn" ng-app="J3pz">
-<head><title>剑网3配装器</title>
+<head><title>古网配装器</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="剑网3配装器为剑网3玩家提供完善、准确的配装工具。">
@@ -10,7 +10,7 @@
     <script type="text/javascript" src="js/libs/utils/html5shiv.js"></script>
     <script type="text/javascript" src="js/libs/utils/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="/pkg/pages/index.html_aio_2bd52d9.css"/>
+    <link rel="stylesheet" type="text/css" href="${ctx}/static/css/index.css"/>
 </head>
 <body class="menubar-hoverable header-fixed">
 <header id="header">
@@ -19,7 +19,7 @@
             <ul class="header-nav header-nav-options">
                 <li class="header-nav-brand">
                     <div class="brand-holder"><a href="/"><span
-                                    class="text-lg text-bold text-primary">剑网3 配装器</span></a></div>
+                                    class="text-lg text-bold text-primary">古网 配装器</span></a></div>
                 </li>
                 <li ng-if="$root.isPz"><a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
                                           href="javascript:void(0);"><i class="fa fa-bars"></i></a></li>
