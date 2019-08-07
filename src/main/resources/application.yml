@@ -27,8 +27,8 @@ spring:
     charset: UTF-8
     settings:
       number_format: '0.##'   #数字格式化，无小数点
-  resources:
-    static-locations: classpath:/**
+#  resources:
+#    static-locations: classpath:/**
 
 mybatis:
     type-aliases-package: org.europeguy.entity
