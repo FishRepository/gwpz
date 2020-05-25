@@ -1,4 +1,4 @@
-package org.europeguy.common;
+package org.europeguy.base;
 
 import freemarker.template.Configuration;
 import org.slf4j.Logger;

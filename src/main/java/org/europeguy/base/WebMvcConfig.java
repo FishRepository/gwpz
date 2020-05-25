@@ -1,4 +1,4 @@
-package org.europeguy.common;
+package org.europeguy.base;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;

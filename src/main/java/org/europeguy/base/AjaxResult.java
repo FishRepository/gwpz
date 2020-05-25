@@ -1,4 +1,4 @@
-package org.europeguy.common;
+package org.europeguy.base;
 
 import lombok.Data;
 import org.springframework.http.HttpStatus;
