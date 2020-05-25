@@ -1,8 +1,11 @@
 package org.europeguy.common;
 
+import lombok.Data;
+import org.springframework.http.HttpStatus;
+
 import java.io.Serializable;
 
-
+@Data
 public class AjaxResult<T> implements Serializable {
 
     private static final long serialVersionUID = 80629816069662096L;
@@ -12,27 +15,31 @@ public class AjaxResult<T> implements Serializable {
 
     private int code;
 
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
+    public AjaxResult(String msg, T data, int code) {
         this.msg = msg;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
         this.data = data;
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
         this.code = code;
+    }
+
+    public AjaxResult<Void> error(){
+        AjaxResult<Void> result = new AjaxResult<>();
+        result.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+        result.setMsg("error");
+        return result;
+    }
+
+    public AjaxResult<Void> success(){
+        AjaxResult<Void> result = new AjaxResult<>();
+        result.setCode(HttpStatus.OK.value());
+        result.setMsg("success");
+        return result;
+    }
+
+    public AjaxResult<T> success(T t){
+        AjaxResult<T> result = new AjaxResult<>();
+        result.setCode(HttpStatus.OK.value());
+        result.setMsg("success");
+        result.setData(t);
+        return result;
     }
 }

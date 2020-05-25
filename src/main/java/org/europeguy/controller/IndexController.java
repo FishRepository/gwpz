@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping(value = "/")
-public class IndexController extends BaseController {
+public class IndexController {
 
     @RequestMapping(value = "/index")
     public ModelAndView index(){
